@@ -1,5 +1,4 @@
 console.log("redux js");
-
 import { createStore } from 'redux';
 
 const $form = document.getElementById('form');
@@ -16,7 +15,6 @@ function handleSubmit(event) {
             title
         }
     })
-    
 }
 
 const initialState = [
@@ -45,13 +43,21 @@ const store = createStore(
     initialState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
+function render(){
+    const $container = document.getElementById('playlist');
+    const playlist = store.getState();
+    $container.innerHTML = '';
+    playlist.forEach(item => {
+        const template = document.createElement('p');
+        template.textContent = item.title;
+        $container.appendChild(template);
+    });
+}
+render();
 
-const $container = document.getElementById('playlist');
-const playlist = store.getState();
+function handleChange(){
+    render();
+}
 
-playlist.forEach(item => {
-    const template = document.createElement('p');
-    template.textContent = item.title;
-    $container.appendChild(template);
-});
+store.subscribe(handleChange);
 console.log(store.getState());
