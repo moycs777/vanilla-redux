@@ -5,6 +5,7 @@ import Search from '../../widgets/containers/search';
 import Media from '../../playlist/components/media';
 
 function Categories(props) {
+  console.log("search component  props: " + props.search )
   return (
     <div className="Categories">
       <Search />
