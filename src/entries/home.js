@@ -3,7 +3,7 @@ import { hydrate } from 'react-dom';
 import { render } from 'react-dom';
 import Home from '../pages/containers/home';
 // import Playlist from './src/playlist/components/playlist';
-import data from '../api.json';
+//import data from '../api.json';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../reducers/data';
@@ -11,7 +11,9 @@ import normalizedData from '../schemas/index';
 
 const initialState = {
     data: {
-        ...data
+        //...data
+        entities: normalizedData.entities,
+        categories: normalizedData.result.categories,
     },
     search: [],
 }
