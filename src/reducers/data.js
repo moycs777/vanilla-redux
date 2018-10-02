@@ -6,9 +6,11 @@ function data(state, action) {
                 if (action.payload.query) {
                     const list = state.data.categories[2].playlist;
                     const results = list.filter((item) => {
-                        return item.author.includes(action.payload.query)
+                        return item.author.includes('Luis Fonsi')
+                        /* return item.author.includes(action.payload.query) */
                     })
                 }
+                console.log("results :" + results);
                 return {
                     ...state,
                     search: results

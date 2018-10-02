@@ -9,7 +9,6 @@ import { Provider } from 'react-redux';
 import reducer from '../reducers/data';
 import normalizedData from '../schemas/index';
 
-console.log("datos norlaizados " + JSON.stringify(normalizedData));
 const initialState = {
     data: {
         ...data
