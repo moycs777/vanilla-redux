@@ -10,6 +10,7 @@ const initialState = fromJS({
 })
 
 
+
 function data(state = initialState, action) {
     switch (action.type) {
         case 'SEARCH_VIDEO':

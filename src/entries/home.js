@@ -1,39 +1,56 @@
 import React from 'react';
-import { hydrate } from 'react-dom';
-import { render } from 'react-dom';
+import {
+    render
+} from 'react-dom';
 import Home from '../pages/containers/home';
 // import Playlist from './src/playlist/components/playlist';
-//import data from '../api.json';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from '../reducers/index';
-import normalizedData from '../schemas/index';
-import { Map as map} from 'immutable';
+// import data from '../api.json';
+// console.log('Hola mundo!' )
+// import data from '../schemas/index.js';
 
-/* const initialState = {
-    data: {
-        entities: normalizedData.entities,
-        categories: normalizedData.result.categories,
-        search: [],
-    },
-    modal:{
-        visibility: false,
-        mediaId:null
-    }
-} */
+import {
+    Provider
+} from 'react-redux';
+
+import {
+    createStore
+} from 'redux';
+import reducer from '../reducers/index';
+import {
+    Map as map
+} from 'immutable';
+
+// console.log(data);
+// console.log(data);
+
+// const initialState = {
+//   data: {
+//     // ...data,
+//     entities: data.entities,
+//     categories: data.result.categories,
+//     search: [],
+//   },
+//   modal: {
+//     visibility: false,
+//     mediaId: null,
+//   }
+// }
 
 const store = createStore(
     reducer,
     map(),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+);
+
+// console.log(store.getState());
 
 const homeContainer = document.getElementById('home-container')
 
-render(
-    <Provider store={store}>
-        <Home/>
-    </Provider>
-    , homeContainer
-);
+// ReactDOM.render(que voy a renderizar, donde lo haré);
+// const holaMundo = <h1>hola Estudiante!</h1>;
 
+render( <Provider store = {
+        store
+    } >
+    <Home / >
+    </Provider>, homeContainer);

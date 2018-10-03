@@ -2,30 +2,32 @@ import React from 'react';
 import Category from './category';
 import './categories.css';
 import Search from '../../widgets/containers/search';
-import Media from '../../playlist/components/media';
+import Media from '../../playlist/components/media.js';
 
 function Categories(props) {
-  console.log("search component  props: " + props.search )
-  return (
-    <div className="Categories">
-      <Search />
-      {
-        props.search.map( (item)=>{
-          return <Media {...item.toJS()} key={item.get('id')} />
-        })
-      }
-      {
-        props.categories.map((item) =>{
-          return (
-            <Category
-              key={item.get('id')}
-              {...item.toJS()}
-              handleOpenModal={props.handleOpenModal}
-            />
-          )
-        })
-      }
-    </div>
+  return ( <div className = "Categories" >
+    <Search / > {
+      props.search.map((item) => {
+        return <Media { ...item.toJS()
+        }
+        key = {
+          item.get('id')
+        }
+        />
+      })
+    } {
+      props.categories.map((item) => {
+        return ( < Category key = {
+            item.get('id')
+          } { ...item.toJS()
+          }
+          handleOpenModal = {
+            props.handleOpenModal
+          }
+          />
+        )
+      })
+    } </div>
   )
 }
 

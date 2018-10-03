@@ -1,25 +1,20 @@
-import { schema } from 'normalizr';
-import { fromJS } from 'immutable';
+import {
+    fromJS
+} from 'immutable';
 
 const initialState = fromJS({
-
     visibility: false,
-     mediaId: null
-
+    mediaId: null,
 })
 
-
-function modal(state = initialState,action){
+function modal(state = initialState, action) {
     switch (action.type) {
         case 'OPEN_MODAL':
-            return state;
-        
-            case 'CLOSE_MODAL':
-            return state;
-            
-    
+            return state
+        case 'CLOSE_MODAL':
+            return state
         default:
-            return state;
+            return state
     }
 }
 
