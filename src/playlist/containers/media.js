@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class MediaContainer extends React.Component{
     render(){
         return(
-            < Media  {...this.props.data}   />
+            < Media  {...this.props.data.toJS()}   />
         )
     }
 }
