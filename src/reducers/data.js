@@ -1,11 +1,13 @@
 import schema from '../schemas/index.js';
+import {
+    fromJS
+} from 'immutable';
 
-const initialState = {
+const initialState = fromJS({
     entities: schema.entities,
     categories: schema.result.categories,
     search: [],
-}
-
+})
 
 
 function data(state = initialState, action) {

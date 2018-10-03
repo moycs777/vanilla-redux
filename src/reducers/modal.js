@@ -1,11 +1,12 @@
 import { schema } from 'normalizr';
+import { fromJS } from 'immutable';
 
-const initialState = {
+const initialState = fromJS({
 
     visibility: false,
      mediaId: null
 
-}
+})
 
 
 function modal(state = initialState,action){

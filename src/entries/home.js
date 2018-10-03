@@ -8,10 +8,10 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../reducers/index';
 import normalizedData from '../schemas/index';
+import { Map as map} from 'immutable';
 
-const initialState = {
+/* const initialState = {
     data: {
-        //...data
         entities: normalizedData.entities,
         categories: normalizedData.result.categories,
         search: [],
@@ -20,11 +20,11 @@ const initialState = {
         visibility: false,
         mediaId:null
     }
-}
+} */
 
 const store = createStore(
     reducer,
-    {},
+    map(),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

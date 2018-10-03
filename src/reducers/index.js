@@ -4,7 +4,7 @@ import modal from './modal';
 
 import {
     combineReducers
-} from 'redux';
+} from 'redux-immutable';
 
 const rootReducer = combineReducers({
     data,
