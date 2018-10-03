@@ -1,10 +1,14 @@
+
 import data from './data';
 import modal from './modal';
 
-import { CombineReducers } from 'react-redux';
+import {
+    combineReducers
+} from 'redux';
 
-const rootReducer = CombineReducers({
+const rootReducer = combineReducers({
     data,
     modal
 })
-export default rootReducer;
+
+export default rootReducer
