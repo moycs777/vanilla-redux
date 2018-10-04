@@ -8,23 +8,24 @@ import HandleError from '../../error/containers/handle-error';
 import VideoPlayer from '../../player/containers/video-player';
 import { connect } from 'react-redux';
 import { List as list } from 'immutable';
+import { openModal, closeModal } from '../../actions/index';
 
 class Home extends Component {
-
+  // state = {
+  //   modalVisible: false,
+  // }
   handleOpenModal = (id) => {
-    this.props.dispatch({
-      type: 'OPEN_MODAL',
-      payload: {
-        mediaId: id
-      }
-    })
-
+    this.props.dispatch(openModal(id))
+    // this.setState({
+    //   modalVisible: true,
+    //   media
+    // })
   }
   handleCloseModal = (event) => {
-
-    this.props.dispatch({
-      type: 'CLOSE_MODAL'
-    })
+    // this.setState({
+    //   modalVisible: false,
+    // })
+    this.props.dispatch(closeModal())
   }
   render() {
     return (
@@ -45,7 +46,8 @@ class Home extends Component {
                 <VideoPlayer
                   autoplay
                   id={this.props.modal.get('mediaId')}
-
+                  // src={this.state.media.src}
+                  // title={this.state.media.title}
                 />
               </Modal>
             </ModalContainer>
